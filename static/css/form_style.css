@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth > img {
+    height: 75vh;
+    background-color: transparent;
+    margin: 5vh;
+}
+
+button {
+    font-size: 100%;
+    cursor: pointer;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 3em;
+    padding: .5em 1em;
+    border: 0.10em solid white;
+    background-color: #f3c6d4;
+    transition: background-color 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+    color: white;
+}
+
+button:hover {
+    background-color: #fafafa;
+    border: 0.10em solid #d9b8c2;
+    color: #d9b8c2;
+}
+
+form {
+    font-family: Sono, sans-serif;
+    color: #d9b8c2;
+    background-color: white;
+}
+
+.form_div {
+    width: min-content;
+    background-color: white;
+    border: 0.145em solid #d9b8c2;
+    padding-top: 2em;
+    padding-bottom: 3.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 1em;
+    box-shadow: 10px 10px 6px 3px  #f3c6d44c;
+    margin-top: 3vh;
+    margin-bottom: 6vh;
+}
+
+input {
+    border: 0.145em solid #d9b8c2;
+    padding: 1%;
+    color: #cd9baa;
+    font-family: Sono, sans-serif;
+    transition: background-color 0.3s ease-in-out 0s;
+    height: 2.5em;
+    border-radius: 0.5em;
+    text-align: center;
+    width: 30vh;
+}
+
+input:focus {
+    outline: none;
+    background-color: #fff7fa;
+}
+
+.form_p {
+    background-color: white;
+    margin-bottom: 0.3em;
+    color: #cd9baa;
+}
+
+.form_option {
+    margin: 1em;
+    background-color: white;
+}
+
+p {
+    background-color: white;
+}
+
+.error_message {
+    width: 100%;
+    color: #d26989;
+    font-family: Sono, sans-serif;
+    background-color: white;
+    display: none;
+    text-align: center;
+}
+
+.error_message:first-of-type {
+    display: block;
+}
+
+.form_button {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+.profile_pic {
+    width: 1vh;
+}
+
+textarea {
+    border: 0.145em solid #d9b8c2;
+    padding: 1%;
+    color: #cd9baa;
+    font-family: Sono, sans-serif;
+    transition: background-color 0.3s ease-in-out 0s;
+    height: 10em;
+    width: 30vh;
+    border-radius: 0.5em;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    background-color: #fff7fa;
+}
+
+.image_form {
+    width: 30vh;
+}
+
+.image_form > p > .checkbox {
+    width: 1vh;
+}
+
+.profile_buttons {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.button {
+    font-size: 80%;
+    cursor: pointer;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 3em;
+    padding: 0.5em 1em;
+    border: 0.11em solid white;
+    background-color: #d55a81;
+    transition: background-color 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+    color: white;
+}
+
+.button:hover {
+    background-color: #fafafa;
+    border: 0.10em solid #d2879d;
+    color: #d2879d;
+}
+
+.edit_button {
+    width: 30vh;
+}
+
+.image_form_p {
+    font-size: 0;
+}
+
+.image_form_p > input[type="checkbox" i] {
+    width: 3vh;
+}
+
+/* .image_form_p input[type="file"] {
+    display: none;
+}
+
+.image_form_p label:first-of-type {
+    font-size: 1rem;
+} */
+
+.note {
+    background-color: white;
+    font-size: 1.6vh;
+}
