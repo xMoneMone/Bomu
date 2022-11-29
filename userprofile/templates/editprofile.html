@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headers %} <link rel="stylesheet" href="{% static 'css/form_style.css' %}"> {% endblock headers %}
+
+{% block content %}
+<div class="auth">
+
+    <div class="form_div">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form_option">
+            <p class="form_p">Profile picture:</p>
+            {% if user.userprofile.profile_pic %}
+                <div class="note">• Check to clear profile picture</div>
+            {% endif %}
+            <div class="image_form">
+                <p class="image_form_p"><label for="id_profile_pic">Choose file</label>{% csrf_token %}{{profile_form.profile_pic}}</p>
+            </div>
+        </div>
+        <div class="form_option">
+            <p class="form_p">Nickname:</p>
+            <p>{% csrf_token %}{{profile_form.nickname}}</p>
+        </div>
+        <div class="form_option">
+            <p class="form_p">Bio:</p>
+            <p>{% csrf_token %}{{profile_form.bio}}</p>
+        </div>
+
+        <div class="form_button">
+            <button class="edit_button" type="submit">Edit</button>
+        </div>
+
+    </form>
+
+    <div class="profile_buttons">
+        <div><a class="button" href="{% url 'logout' %}">Log out</a></div>
+        <div><a class="button" href="{% url 'delete profile' %}">Delete</a></div>
+    </div>
+
+    <div class="error_message">
+        {% for message in messages %}
+            <p id="message">{{ message }}</p>
+        {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headers %} <link rel="stylesheet" href="{% static 'css/form_style.css' %}"> {% endblock headers %}
+
+{% block content %}
+
+<div class="auth">
+    <img src="{% static 'images/bomu-girl.webp' %}">
+
+    <div class="form_div">
+    <form method="post">
+        <div class="form_option">
+            <p class="form_p">Username:</p>
+            <p>{% csrf_token %}{{form.username}}</p>
+        </div>
+
+        <div class="form_option">
+            <p class="form_p">Password:</p>
+            <p>{% csrf_token %}{{form.password}}</p>
+        </div>
+
+        <div class="form_button">
+            <button type="submit">Log in</button>
+        </div>
+
+    </form>
+
+    <div class="error_message">
+    {% for message in messages %}
+        <p id="message">{{ message }}</p>
+    {% endfor %}
+    </div>
+    </div>
+</div>
+
+{% endblock %}
