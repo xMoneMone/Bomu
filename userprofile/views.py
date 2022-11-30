@@ -10,9 +10,9 @@ from django.contrib.auth.models import User
 
 @login_required(login_url='login')
 def show_profile(request, uname):
-    try:
+    if User.objects.filter(username=uname).exists():
         cur_profile = User.objects.get(username=uname)
-    except:
+    else:
         cur_profile = None
 
     context = {"cur_profile": cur_profile}
