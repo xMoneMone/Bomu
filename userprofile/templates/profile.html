@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headers %} <link rel="stylesheet" href="{% static 'css/profile_style.css' %}"> {% endblock headers %}
+
+{% block content %}
+
+    <div class="whole_profile">
+        <div class="profile">
+            <img class="profile_pfp" src="
+            {% if cur_profile.userprofile.profile_pic %}
+                {{ cur_profile.userprofile.profile_pic.url }}
+            {% else %}
+                {% static 'images/bomu-no-pfp-2.webp' %}
+            {% endif %}" alt="profile picture"></a>
+
+            <div class="profile_info">
+                <div class="top_info">
+                    <strong>{% if cur_profile.userprofile.nickname %}
+                        {{ cur_profile.userprofile.nickname }}
+                    {% else %}
+                        {{ cur_profile }}
+                    {% endif %}</strong>
+
+                    <div class="user">(@{{ cur_profile }})</div>
+
+                    {% if cur_profile == user %}
+                    <a href="{% url 'edit profile' %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
+                    {% endif %}
+                </div>
+
+                <div class="bio">
+                {% if cur_profile.userprofile.bio %}
+                    <strong>{{ cur_profile.userprofile.bio }}</strong>
+                {% endif %}
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
+.profile_pfp {
+    border-radius: 100em;
+    width: 20vh;
+    height: 20vh;
+    margin-right: 5vh;
+    border: 0.10em solid #673e4a;
+}
+
+.settings {
+    height: 3.8vh;
+    margin-left: 1vh;
+    margin-bottom: 0;
+}
+
+.whole_profile {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    width: 50vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.3vh solid #d7bbc3;
+}
+
+.profile_info {
+    font-family: "Sono", sans-serif;
+}
+
+.top_info {
+    align-items: center;
+    color: #673e4a;
+    font-size: 3vh;
+    display: inline-flex;
+    margin-bottom: 3vh;
+}
+
+.user {
+    color: #b38f9a;
+}
+
+.bio {
+    width: 45vh;
+    height: 10vh;
+    color: #b38f9a;
+    overflow-wrap: break-word;
+}
