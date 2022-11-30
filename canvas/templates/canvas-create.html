@@ -8,7 +8,11 @@
 
 {% block content %}
     <div class="whole-canvas">
-        <div>
+        <div class="toggle-and-post">
+            <div class="toggle">
+                <label for="toggleGuide">Guide </label>
+                <input type="checkbox" id="toggleGuide" checked>
+            </div>
             <a id="post-canvas" href="#">Post</a>
         </div>
         <div class="guide-and-canvas">
@@ -28,10 +32,6 @@
             <button id="color10"></button>
             <button id="color11"></button>
             <button id="color12"></button>
-        </div>
-        <div>
-            <label for="toggleGuide">Guide </label>
-            <input type="checkbox" id="toggleGuide" checked>
         </div>
     </div>
 {% endblock %}

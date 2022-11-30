@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
 #canvas {
     cursor: crosshair;
 }
@@ -7,8 +9,14 @@ button {
     width: 4vh;
     height: 4vh;
     border-radius: 0.3em;
-    border: none;
+    border: 0.16em solid #673e4a;
+    transition: border 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
 }
+
+button:hover {
+    border: 0.16em solid white;
+}
+
 
 #guide {
     display: grid;
@@ -22,8 +30,20 @@ button {
 }
 
 #post-canvas {
-    background-color: #e4adbe;
-    border-radius: 2em;
+    font-size: 100%;
+    cursor: pointer;
+    border-radius: 3em;
+    padding: .5em 1em;
+    border: 0.10em solid white;
+    background-color: #f3c6d4;
+    transition: background-color 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+    color: white;
+}
+
+#post-canvas:hover {
+    background-color: #fafafa;
+    border: 0.10em solid #d9b8c2;
+    color: #d9b8c2;
 }
 
 .guide-and-canvas {
@@ -38,6 +58,13 @@ button {
     grid-row: 1;
 }
 
+.toggle-and-post {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .whole-canvas > *{
     margin: 1vh;
 }
@@ -48,6 +75,16 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+label {
+    font-family: Sono;
+    color: #e4adbe;
+}
+
+input[type="checkbox"] {
+    accent-color: #e4adbe;
+    transform: scale(1.2);
 }
 
 #color1 {
