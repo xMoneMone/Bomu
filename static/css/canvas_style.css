@@ -60,7 +60,7 @@ button:hover {
 }
 
 .toggle-and-post {
-    width: 500px;
+    width: 480px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
