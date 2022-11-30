@@ -134,9 +134,14 @@ function changeColor12() {
     color = "#673e4a"
 }
 
+canvas.addEventListener("pointermove", handleCanvasMousemove);
+canvas.addEventListener("pointerdown", changeMousedownFlag);
+document.body.addEventListener("pointereup", changeMouseupFlag);
+
 canvas.addEventListener("mousemove", handleCanvasMousemove);
 canvas.addEventListener("mousedown", changeMousedownFlag);
 document.body.addEventListener("mouseup", changeMouseupFlag);
+
 toggleGuide.addEventListener("change", handleToggleGuideChange);
 
 color1.addEventListener("click", changeColor1);

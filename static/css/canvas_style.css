@@ -2,6 +2,7 @@
 
 #canvas {
     cursor: crosshair;
+    border-radius: 0.2em;
 }
 
 button {
