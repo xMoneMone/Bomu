@@ -156,3 +156,11 @@ color9.addEventListener("click", changeColor9);
 color10.addEventListener("click", changeColor10);
 color11.addEventListener("click", changeColor11);
 color12.addEventListener("click", changeColor12);
+
+
+let post_button = document.getElementById('post-canvas')
+post_button.addEventListener('click', function(){
+    let current_href = post_button.attr("href");
+    let new_href = current_href + "?canvas=" + canvas.toDataURL();
+    post_button.attr("href", new_href);
+});
