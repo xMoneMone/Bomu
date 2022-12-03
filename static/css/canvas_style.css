@@ -135,3 +135,10 @@ input[type="checkbox"] {
 #color12 {
     background-color: #673e4a;
 }
+
+a {
+    font-family: "Sono", sans-serif;
+    font-size: 120%;
+    color: white;
+    text-decoration: none;
+}
