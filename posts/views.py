@@ -23,7 +23,7 @@ def post_edit(request, pk):
         form = CanvasPostForm(request.POST or None, request.FILES or None, instance=cur_post)
         if form.is_valid():
             form.save()
-            return redirect(request.META['HTTP_REFERER'])
+            return redirect('post-details', pk)
 
     context = {"form": form,
                "post": cur_post}

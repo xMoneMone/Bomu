@@ -85,7 +85,7 @@ def useredit(request):
         form = UserProfileForm(request.POST or None, request.FILES or None, instance=user_profile)
         if form.is_valid():
             form.save()
-            return redirect(request.META['HTTP_REFERER'])
+            return redirect('show profile', str(request.user))
         else:
             messages.info(request, ":(")
 
