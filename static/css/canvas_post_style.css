@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
+.whole-post {
+    background-color: white;
+    padding: 2vh;
+    border: 0.145em solid #d9b8c2;
+    border-radius: 0.6em;
+    width: min-content;
+    height: min-content;
+    margin: 2vh;
+}
+
+.drawing {
+    width: 20vh;
+    border-radius: 0.6em;
+    border: 0.145em solid #d9b8c2;
+    margin-bottom: 2vh;
+}
+
+.post-info {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin-bottom: 1vh;
+}
+
+.post-info *{
+    background-color: white;
+}
+
+.artist {
+    display: flex;
+    align-items: center;
+}
+
+.likes-box {
+    display: flex;
+    align-items: center;
+}
+
+.drawing-pfp {
+    width: 3.8vh;
+    height: 3.8vh;
+    border-radius: 2em;
+    border: 0.10em solid #673e4a;
+    margin-right: 0.6vh;
+}
+
+.text {
+    font-family: Sono;
+    color: #cd9baa;;
+    font-size: 1em;
+}
+
+.likes {
+    height: 3vh;
+    margin-left: 0.6vh;
+}
