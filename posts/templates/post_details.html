@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headers %}
+<link rel="stylesheet" href="{% static 'css/canvas_post_details_style.css' %}">
+{% endblock headers %}
+
+{% block content %}
+<div class="center-post">
+    <div class="whole-post">
+
+        <div class="drawing-border"><img class="drawing" src='{{post.drawing.url}}' alt="drawing"></div>
+
+        <div class="bio">{{post.description}}</div>
+
+        <div class="post-info">
+            <a class="text" href="{% url 'show profile' post.user %}">
+                <div class="artist">
+                    <img class="drawing-pfp" src="{% if post.user.userprofile.profile_pic %}
+                    {{ post.user.userprofile.profile_pic.url }}
+                    {% else %}
+                    {% static 'images/bomu-no-pfp-2.webp' %}
+                    {% endif %}" alt="pfp">
+                    <div class="user-name3">{{post.user}}</div>
+                </div>
+            </a>
+            <div class="likes-box">
+                <p class="text">0</p>
+                <img class="likes" src="{% static 'images/settings.webp' %}" alt="likes">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

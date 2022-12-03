@@ -8,4 +8,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('canvas/', include('canvas.urls')),
     path('user/', include('userprofile.urls')),
+    path('post/', include('posts.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

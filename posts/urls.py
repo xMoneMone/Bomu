@@ -1,0 +1,7 @@
+from django.urls import path, include
+from posts import views
+
+urlpatterns = [
+    path('<pk>', views.post_details, name="post-details"),
+    path('<pk>/edit', views.post_edit, name="post-edit"),
+]

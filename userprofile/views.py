@@ -16,7 +16,7 @@ def show_profile(request, uname):
 
     if User.objects.filter(username=uname).exists():
         cur_profile = User.objects.get(username=uname)
-        posts = CanvasPost.objects.filter(user=cur_profile)
+        posts = CanvasPost.objects.filter(user=cur_profile).order_by('-id')
 
     context = {"cur_profile": cur_profile,
                "posts": posts}
