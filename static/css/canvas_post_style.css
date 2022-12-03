@@ -8,6 +8,7 @@
     width: min-content;
     height: min-content;
     margin: 2vh;
+    box-shadow: 4px 5px 5px 2px  #e8b9c84c;
 }
 
 .drawing {
