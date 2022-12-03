@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block headers %} <link rel="stylesheet" href="{% static 'css/form_style.css' %}"> {% endblock headers %}
+
 {% block content %}
-{% endblock content %}
+
+<div class="auth">
+    <div class="form_div">
+        <img class='drawing' src="{% static 'images/no_drawing.png' %}" alt="drawing">
+        
+    <form method="post">
+
+        <div class="form_option">
+            <p class="form_p">Description:</p>
+            <p>{% csrf_token %}{{form.description}}</p>
+        </div>
+
+        <div class="form_button">
+            {% csrf_token %}<button type="submit">Post</button>
+        </div>
+
+    </form>
+    </div>
+</div>
+
+{% endblock %}

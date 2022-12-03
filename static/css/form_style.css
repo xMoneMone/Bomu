@@ -49,6 +49,7 @@ form {
     box-shadow: 10px 10px 6px 3px  #f3c6d44c;
     margin-top: 3vh;
     margin-bottom: 6vh;
+    text-align: center;
 }
 
 input {
@@ -181,4 +182,9 @@ textarea:focus {
 .note {
     background-color: white;
     font-size: 1.6vh;
+}
+
+.drawing {
+    width: 30vh;
+    border-radius: 0.6em;
 }
