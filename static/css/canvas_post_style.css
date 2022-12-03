@@ -11,10 +11,19 @@
 }
 
 .drawing {
-    width: 20vh;
+    width: 8.8em;
     border-radius: 0.3em;
-    border: 0.145em solid #d9b8c2;
+}
+
+.drawing-border {
+    width: 9em;
+    height: 9em;
+    background-color: #9c6f7d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 3vh;
+    border-radius: 0.4em;
 }
 
 .post-info {
@@ -42,14 +51,14 @@
     width: 3.8vh;
     height: 3.8vh;
     border-radius: 2em;
-    border: 0.10em solid #673e4a;
     margin-right: 0.6vh;
 }
 
 .text {
     font-family: Sono;
-    color: #cd9baa;;
+    color: #9c6f7d;
     font-size: 1em;
+    text-decoration: none;
 }
 
 .likes {
