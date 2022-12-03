@@ -44,14 +44,16 @@
 
 .user-name {
     color: #b38f9a;
-    width: 8ch;
+    max-width: 8ch;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .user-name2 {
     color: #b38f9a;
-    width: 10ch;
+    max-width: 10ch;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .bio {

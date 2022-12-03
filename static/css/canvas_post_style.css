@@ -70,4 +70,5 @@
 .user-name3 {
     width: 7ch;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
