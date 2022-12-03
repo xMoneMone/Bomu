@@ -6,16 +6,20 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from userprofile.models import UserProfile
 from django.contrib.auth.models import User
+from posts.models import CanvasPost
 
 
 @login_required(login_url='login')
 def show_profile(request, uname):
+    posts = []
+    cur_profile = None
+
     if User.objects.filter(username=uname).exists():
         cur_profile = User.objects.get(username=uname)
-    else:
-        cur_profile = None
+        posts = CanvasPost.objects.filter(user=cur_profile)
 
-    context = {"cur_profile": cur_profile}
+    context = {"cur_profile": cur_profile,
+               "posts": posts}
     return render(request, template_name="profile.html", context=context)
 
 
@@ -81,7 +85,7 @@ def useredit(request):
         form = UserProfileForm(request.POST or None, request.FILES or None, instance=user_profile)
         if form.is_valid():
             form.save()
-            return redirect('profile')
+            return redirect(request.META['HTTP_REFERER'])
         else:
             messages.info(request, ":(")
 
