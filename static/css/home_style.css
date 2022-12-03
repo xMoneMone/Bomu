@@ -1,0 +1,11 @@
+.all-posts {
+    display: grid;
+    width: min-content;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.center-posts {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

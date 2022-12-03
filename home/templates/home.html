@@ -1,4 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block headers %} 
+<link rel="stylesheet" href="{% static 'css/canvas_post_style.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/home_style.css' %}"> 
+{% endblock headers %}
 
 {% block content %}
+
+<div class="center-posts">
+    <div class="all-posts">
+        {% for post in posts %}
+            {% include 'posts/templates/post.html' %}
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}
