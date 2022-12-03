@@ -7,4 +7,3 @@ class CanvasPost(models.Model):
 
     drawing = models.ImageField(upload_to='art')
     description = models.TextField(max_length=120, blank=True, null=True)
-    
