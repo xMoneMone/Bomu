@@ -187,4 +187,9 @@ textarea:focus {
 .drawing {
     width: 30vh;
     border-radius: 0.6em;
+    border: 0.145em solid #d9b8c2;
+}
+
+#hide {
+    display:none;
 }
