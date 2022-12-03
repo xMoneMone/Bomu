@@ -160,7 +160,6 @@ color12.addEventListener("click", changeColor12);
 
 let post_button = document.getElementById('post-canvas')
 post_button.addEventListener('click', function(){
-    let current_href = post_button.attr("href");
-    let new_href = current_href + "?canvas=" + canvas.toDataURL();
-    post_button.attr("href", new_href);
+    window.sessionStorage.setItem('drawing', canvas.toDataURL())
+    console.log('worketh')
 });
