@@ -30,5 +30,10 @@
             </div>
         </div>
     </div>
+
+    {% if post.user == request.user %}
+        <a href="{% url 'post-edit' post.id %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
+    {% endif %}
+
 </div>
 {% endblock %}

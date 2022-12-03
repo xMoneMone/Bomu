@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from posts.models import CanvasPost
+from posts.forms import CanvasPostForm
+from django.contrib.auth.decorators import login_required
 
 
 def post_details(request, pk):
@@ -8,7 +10,32 @@ def post_details(request, pk):
     return render(request, 'post_details.html', context=context)
 
 
+@login_required(login_url='login')
 def post_edit(request, pk):
     cur_post = CanvasPost.objects.get(id=pk)
-    context = {"post": cur_post}
-    return render(request, 'post_details.html', context=context)
+
+    if cur_post.user != request.user:
+        return redirect('home')
+
+    if request.method == 'GET':
+        form = CanvasPostForm(instance=cur_post, initial=cur_post.__dict__)
+    else:
+        form = CanvasPostForm(request.POST or None, request.FILES or None, instance=cur_post)
+        if form.is_valid():
+            form.save()
+            return redirect(request.META['HTTP_REFERER'])
+
+    context = {"form": form,
+               "post": cur_post}
+
+    return render(request, 'post_edit.html', context=context)
+
+
+@login_required(login_url='login')
+def post_delete(request, pk):
+    cur_post = CanvasPost.objects.get(id=pk)
+    if cur_post.user != request.user:
+        return redirect('home')
+    else:
+        cur_post.delete()
+        return redirect('home')

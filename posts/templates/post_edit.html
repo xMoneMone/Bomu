@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headers %} <link rel="stylesheet" href="{% static 'css/form_style.css' %}"> {% endblock headers %}
+
+{% block content %}
+<div class="auth">
+
+    <div class="form_div">
+        <form method="post" enctype="multipart/form-data">
+
+            <img class='drawing' id="drawing_preview" src="{{ post.drawing.url }}" alt="drawing">
+
+            <div class="form_option">
+                <p class="form_p">Description:</p>
+                <p>{% csrf_token %}{{form.description}}</p>
+            </div>
+
+            <div class="form_button">
+                <button class="edit_button" type="submit">Save</button>
+            </div>
+
+        </form>
+
+        <div class="edit-post-buttons">
+            <div><a class="post-del-button" href="{% url 'post-delete' post.id %}">Delete</a></div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

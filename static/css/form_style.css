@@ -140,6 +140,14 @@ textarea:focus {
     padding-right: 1em;
 }
 
+.edit-post-buttons {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
 .button {
     font-size: 80%;
     cursor: pointer;
@@ -194,4 +202,25 @@ textarea:focus {
 
 #hide {
     display:none;
+}
+
+.post-del-button {
+    font-size: 80%;
+    cursor: pointer;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 3em;
+    padding: 0.5em 1em;
+    border: 0.11em solid white;
+    background-color: #d55a81;
+    transition: background-color 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+    color: white;
+    font-family: "Sono", sans-serif;
+    text-decoration: none;
+}
+
+.post-del-button:hover {
+    background-color: #fafafa;
+    border: 0.10em solid #d2879d;
+    color: #d2879d;
 }
