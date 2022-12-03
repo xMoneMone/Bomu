@@ -20,13 +20,13 @@
 
             <div class="profile_info">
                 <div class="top_info">
-                    <strong>{% if cur_profile.userprofile.nickname %}
+                    <div class="user-name"><strong>{% if cur_profile.userprofile.nickname %}
                         {{ cur_profile.userprofile.nickname }}
                     {% else %}
                         {{ cur_profile }}
-                    {% endif %}</strong>
+                    {% endif %}</strong></div>
 
-                    <div class="user">(@{{ cur_profile }})</div>
+                    <div class="user-name2">(@{{ cur_profile }})</div>
 
                     {% if cur_profile == user %}
                     <a href="{% url 'edit profile' %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>

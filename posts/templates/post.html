@@ -8,8 +8,12 @@
     <div class="post-info">
         <a class="text" href="{% url 'show profile' post.user %}">
             <div class="artist">
-                <img class="drawing-pfp" src='{{post.user.userprofile.profile_pic.url}}' alt="pfp">
-                <p class="text">{{post.user}}</p>
+                <img class="drawing-pfp" src="{% if post.user.userprofile.profile_pic %}
+                {{ post.user.userprofile.profile_pic.url }}
+                {% else %}
+                {% static 'images/bomu-no-pfp-2.webp' %}
+                {% endif %}" alt="pfp">
+                <div class="user-name3">{{post.user}}</div>
             </div>
         </a>
         <div class="likes-box">

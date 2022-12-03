@@ -42,8 +42,16 @@
     margin-bottom: 3vh;
 }
 
-.user {
+.user-name {
     color: #b38f9a;
+    width: 8ch;
+    overflow: hidden;
+}
+
+.user-name2 {
+    color: #b38f9a;
+    width: 10ch;
+    overflow: hidden;
 }
 
 .bio {

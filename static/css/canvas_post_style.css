@@ -66,3 +66,8 @@
     height: 3vh;
     margin-left: 0.6vh;
 }
+
+.user-name3 {
+    width: 7ch;
+    overflow: hidden;
+}
