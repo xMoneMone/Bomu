@@ -9,7 +9,6 @@ from django.contrib.auth.models import User
 from posts.models import CanvasPost
 
 
-@login_required(login_url='login')
 def show_profile(request, uname):
     posts = []
     cur_profile = None
