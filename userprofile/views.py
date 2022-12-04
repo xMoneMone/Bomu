@@ -64,10 +64,10 @@ def userlogin(request):
     return render(request, template_name="login.html", context=context)
 
 
-@login_required(login_url='login')
-def userlogout(request):
-    logout(request)
-    return redirect('login')
+class UserLogout(View):
+    def get(self, request):
+        logout(request)
+        return redirect('login')
 
 
 @login_required(login_url='login')
