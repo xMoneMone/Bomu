@@ -9,11 +9,14 @@
 {% block content %}
 <div class="page">
     <div class="center-post">
+        {% if post.user == request.user %}
+            <div class="settings-div">
+                <a href="{% url 'post-edit' post.id %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
+            </div>
+        {% endif %}
         <div class="whole-post">
 
             <img class="drawing" src='{{post.drawing.url}}' alt="drawing">
-
-            <div class="bio">{{post.description}}</div>
 
             <div class="post-info">
                 <a class="text" href="{% url 'show profile' post.user %}">
@@ -36,15 +39,14 @@
                                             {% endif %}" alt="likes"></a>
                 </div>
             </div>
-        </div>
+        
+            <div class="bio">{{post.description}}</div>
 
-        {% if post.user == request.user %}
-            <a href="{% url 'post-edit' post.id %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
-        {% endif %}
+        </div>
 
     </div>
 
-    <div class="comment">
+    <div class="comment-form">
 
         <div class="comment-info">Comments ({{post.canvascomment_set.count}})</div>
 
@@ -54,11 +56,31 @@
                 {% csrf_token %}
                 {{ form.comment }}
 
-                <div class="form_button">
-                    <button class="edit_button" type="submit">Save</button>
+                <div class="form-button">
+                    <button class="edit-button" type="submit">Comment</button>
                 </div>
 
             </form>
+        </div>
+
+    </div>
+
+    <div class="comments">
+
+        <div class="comment">
+            {% for comment in comments %}
+                <a class="text" href="{% url 'show profile' comment.user %}">
+                    <div class="artist">
+                        <img class="drawing-pfp" src="{% if comment.user.userprofile.profile_pic %}
+                        {{ comment.user.userprofile.profile_pic.url }}
+                        {% else %}
+                        {% static 'images/bomu-no-pfp-2.webp' %}
+                        {% endif %}" alt="pfp">
+                        <div class="user-name3">{{comment.user.userprofile.nickname}}</div>
+                    </div>
+                </a>
+                <div class="comment-text">{{comment.comment}}</div>
+            {% endfor %}
         </div>
 
     </div>
