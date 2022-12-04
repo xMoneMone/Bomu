@@ -8,6 +8,20 @@
 
 {% block content %}
 
+
+<div class="center-buttons">
+    <div class="sorting-buttons">
+        <div class="sorting-div">
+            <img class="sorting-pic-popular" src="{% static 'images/popular.webp' %}">
+            <a class="sorting" href="{% url 'home' %}">Popular</a>
+        </div>
+        <div class="sorting-div">
+            <img class="sorting-pic-new" src="{% static 'images/new.webp' %}">
+            <a class="sorting" href="{% url 'home-new' %}">New</a>
+        </div>
+    </div>
+</div>
+
 <div class="center-posts">
     <div class="all-posts">
         {% for post in posts %}

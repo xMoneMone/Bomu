@@ -1,6 +1,7 @@
 .all-posts {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    border-top: 0.3vh solid #d7bbc3;
 }
 
 @media screen and (max-width: 800px) {
@@ -13,4 +14,38 @@
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.center-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sorting-buttons {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin: 3vh;
+}
+
+.sorting-div {
+    display: flex;
+    align-items: center;
+}
+
+.sorting {
+    font-family: "Sono", sans-serif;
+    color: #d7bbc3;
+    text-decoration: none;
+}
+
+.sorting-pic-popular {
+    height: 3vh;
+    margin-right: 0.6vw;
+}
+
+.sorting-pic-new {
+    height: 3.6vh;
+    margin-right: 0.6vw;
 }
