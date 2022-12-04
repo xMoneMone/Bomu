@@ -7,19 +7,21 @@ from django.contrib.auth.decorators import login_required
 from userprofile.models import UserProfile
 from django.contrib.auth.models import User
 from posts.models import CanvasPost
+from django.views import View
 
 
-def show_profile(request, uname):
-    posts = []
-    cur_profile = None
+class ShowProfile(View):
+    def get(self, request, uname):
+        posts = []
+        cur_profile = None
 
-    if User.objects.filter(username=uname).exists():
-        cur_profile = User.objects.get(username=uname)
-        posts = CanvasPost.objects.filter(user=cur_profile).order_by('-id')
+        if User.objects.filter(username=uname).exists():
+            cur_profile = User.objects.get(username=uname)
+            posts = CanvasPost.objects.filter(user=cur_profile).order_by('-id')
 
-    context = {"cur_profile": cur_profile,
-               "posts": posts}
-    return render(request, template_name="profile.html", context=context)
+        context = {"cur_profile": cur_profile,
+                   "posts": posts}
+        return render(request, template_name="profile.html", context=context)
 
 
 def usersignup(request):
