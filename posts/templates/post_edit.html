@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block headers %} <link rel="stylesheet" href="{% static 'css/form_style.css' %}"> {% endblock headers %}
+{% block headers %} 
+<link rel="stylesheet" href="{% static 'css/form_style.css' %}"> 
+{% endblock headers %}
 
 {% block content %}
 <div class="auth">
@@ -23,7 +25,7 @@
         </form>
 
         <div class="edit-post-buttons">
-            <div><a class="post-del-button" href="{% url 'post-delete' post.id %}">Delete</a></div>
+            <div><a class="post-del-button" id="confirm-button" href="{% url 'post-delete' post.id %}" onclick="return confirm('Are you sure?')">Delete</a></div>
         </div>
 
     </div>
