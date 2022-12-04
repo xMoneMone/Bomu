@@ -34,6 +34,12 @@
     align-items: center;
 }
 
+.sorting-bold {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.3vh solid #d7bbc3;
+}
+
 .sorting {
     font-family: "Sono", sans-serif;
     color: #d7bbc3;

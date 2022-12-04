@@ -12,12 +12,12 @@
 <div class="center-buttons">
     <div class="sorting-buttons">
         <div class="sorting-div">
-            <img class="sorting-pic-popular" src="{% static 'images/popular.webp' %}">
-            <a class="sorting" href="{% url 'home' %}">Popular</a>
+            <a class="sorting" href="{% url 'home' %}"></a><img class="sorting-pic-popular" src="{% static 'images/popular.webp' %}"></a>
+            <div {% if tag == "popular" %} class="sorting-bold" {% endif %}><a class="sorting" href="{% url 'home' %}">Popular</a></div>
         </div>
         <div class="sorting-div">
-            <img class="sorting-pic-new" src="{% static 'images/new.webp' %}">
-            <a class="sorting" href="{% url 'home-new' %}">New</a>
+            <a class="sorting" href="{% url 'home-new' %}"><img class="sorting-pic-new" src="{% static 'images/new.webp' %}"></a>
+            <div {% if tag == "new" %} class="sorting-bold" {% endif %}><a class="sorting" href="{% url 'home-new' %}">New</a></div>
         </div>
     </div>
 </div>
