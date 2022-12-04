@@ -55,4 +55,4 @@ def post_like(request, pk):
         like.save()
         like.user.add(request.user)
 
-    return redirect('home')
+    return redirect(request.META['HTTP_REFERER'])
