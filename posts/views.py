@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from posts.models import CanvasPost, CanvasLike
+from posts.models import CanvasPost, CanvasLike, CanvasComment
 from posts.forms import CanvasPostForm
 from django.contrib.auth.decorators import login_required
 from django.views import View
@@ -7,8 +7,10 @@ from django.views import View
 
 class PostDetails(View):
     def get(self, request, pk):
+        form = CanvasComment()
         cur_post = CanvasPost.objects.get(id=pk)
-        context = {"post": cur_post}
+        context = {"post": cur_post,
+                   "form": form}
         return render(request, 'post_details.html', context=context)
 
 

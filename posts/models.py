@@ -14,7 +14,7 @@ class CanvasLike(models.Model):
     to_post = models.ForeignKey(CanvasPost, on_delete=models.CASCADE)
 
 
-# class CanvasComment(models.Model):
-#     user = models.ManyToManyField(User)
-#     to_post = models.ForeignKey(CanvasPost, on_delete=models.CASCADE)
-#
+class CanvasComment(models.Model):
+    user = models.ManyToManyField(User)
+    to_post = models.ForeignKey(CanvasPost, on_delete=models.CASCADE)
+    comment = models.TextField(max_length=120)
