@@ -27,7 +27,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 0.3vh solid #d7bbc3;
 }
 
 .profile_info {
@@ -44,9 +43,11 @@
 
 .user-name {
     color: #b38f9a;
-    max-width: 8ch;
+    max-width: 12ch;
     overflow: hidden;
     text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
 }
 
 .user-name2 {
