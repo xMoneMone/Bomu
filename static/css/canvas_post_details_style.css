@@ -20,7 +20,7 @@
     border-radius: 0.3em;
     border: 0.15em solid #9c6f7d;
     background-color: #9c6f7d;
-    margin-bottom: 8vh;
+    margin-bottom: 3vh;
 }
 
 .post-info {
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
-    margin-bottom: 1vh;
+    margin-bottom: 5vh;
 }
 
 .post-info *{
@@ -65,8 +65,9 @@
 }
 
 .user-name3 {
-    width: 7ch;
+    width: 12ch;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .center-post {
@@ -75,16 +76,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .bio {
     font-family: Sono;
     color: #9c6f7d;
-    font-size: 1em;
+    font-size: 110%;
     background-color: white;
     margin-bottom: 3vh;
     width: 90%;
     overflow-wrap: break-word;
+    text-align: center;
 }
 
 .page {
@@ -94,7 +97,7 @@
     justify-content: center;
 }
 
-.comment {
+.comment-form {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -107,6 +110,88 @@
     display: flex;
     width: 28vw;
     font-family: Sono;
-    color: #9c6f7d;
+    color: #bd929f;
 }
 
+textarea {
+    border: 0.145em solid #ffffff;
+    padding: 1%;
+    margin-top: 0.5em;
+    color: #d8afbb;
+    background-color: #fff7fa;
+    font-family: Sono, sans-serif;
+    transition: background-color 0.3s ease-in-out 0s;
+    height: 5em;
+    width: 26vw;
+    border-radius: 0.5em;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    background-color: #fff7fa69;
+}
+
+.form-button {
+    width: 25vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-button {
+    font-size: 80%;
+    font-family: Sono;
+    cursor: pointer;
+    margin-bottom: 2em;
+    border-radius: 3em;
+    padding: .5em 1em;
+    background-color: #f3c6d4;
+    border: none;
+    transition: background-color 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #f8cfdc;
+}
+
+.comments {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.comment {
+    width: 26vw;
+}
+
+.comment-text {
+    background-color: rgba(255, 255, 255, 0.648);
+    overflow-wrap: break-word;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    /* border: 0.145em solid #d9b8c2; */
+    border-radius: 0.5em;
+    font-family: Sono;
+    color: #bd929f;
+}
+
+.settings {
+    height: 80%;
+    background-color: transparent;
+}
+
+.settings-div {
+    background-color: none;
+    display: flex;
+    width: 26.6vw;
+    justify-content: flex-end;
+    margin-bottom: -4em;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.settings-div *{
+    background-color: transparent;
+}
