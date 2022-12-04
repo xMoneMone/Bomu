@@ -2,12 +2,14 @@ from django.shortcuts import render, redirect
 from posts.models import CanvasPost, CanvasLike
 from posts.forms import CanvasPostForm
 from django.contrib.auth.decorators import login_required
+from django.views import View
 
 
-def post_details(request, pk):
-    cur_post = CanvasPost.objects.get(id=pk)
-    context = {"post": cur_post}
-    return render(request, 'post_details.html', context=context)
+class PostDetails(View):
+    def get(self, request, pk):
+        cur_post = CanvasPost.objects.get(id=pk)
+        context = {"post": cur_post}
+        return render(request, 'post_details.html', context=context)
 
 
 @login_required(login_url='login')
