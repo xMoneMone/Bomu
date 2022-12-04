@@ -86,3 +86,27 @@
     width: 90%;
     overflow-wrap: break-word;
 }
+
+.page {
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-info {
+    margin-left: 2vw;
+    display: flex;
+    width: 28vw;
+    font-family: Sono;
+    color: #9c6f7d;
+}
+

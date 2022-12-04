@@ -7,39 +7,61 @@
 {% endblock headers %}
 
 {% block content %}
-<div class="center-post">
-    <div class="whole-post">
+<div class="page">
+    <div class="center-post">
+        <div class="whole-post">
 
-        <img class="drawing" src='{{post.drawing.url}}' alt="drawing">
+            <img class="drawing" src='{{post.drawing.url}}' alt="drawing">
 
-        <div class="bio">{{post.description}}</div>
+            <div class="bio">{{post.description}}</div>
 
-        <div class="post-info">
-            <a class="text" href="{% url 'show profile' post.user %}">
-                <div class="artist">
-                    <img class="drawing-pfp" src="{% if post.user.userprofile.profile_pic %}
-                    {{ post.user.userprofile.profile_pic.url }}
-                    {% else %}
-                    {% static 'images/bomu-no-pfp-2.webp' %}
-                    {% endif %}" alt="pfp">
-                    <div class="user-name3">{{post.user}}</div>
+            <div class="post-info">
+                <a class="text" href="{% url 'show profile' post.user %}">
+                    <div class="artist">
+                        <img class="drawing-pfp" src="{% if post.user.userprofile.profile_pic %}
+                        {{ post.user.userprofile.profile_pic.url }}
+                        {% else %}
+                        {% static 'images/bomu-no-pfp-2.webp' %}
+                        {% endif %}" alt="pfp">
+                        <div class="user-name3">{{post.user}}</div>
+                    </div>
+                </a>
+                <div class="likes-box">
+                    <p class="text">{{ post.canvaslike_set.count }}</p>
+                    <a href="{% url 'post-like' post.id %}">
+                    <img class="likes" src="{% if post|liked_by:request.user %}
+                                            {% static 'images/liked.webp' %}
+                                            {% else %}
+                                            {% static 'images/not-liked.webp' %}
+                                            {% endif %}" alt="likes"></a>
                 </div>
-            </a>
-            <div class="likes-box">
-                <p class="text">{{ post.canvaslike_set.count }}</p>
-                <a href="{% url 'post-like' post.id %}">
-                <img class="likes" src="{% if post|liked_by:request.user %}
-                                        {% static 'images/liked.webp' %}
-                                        {% else %}
-                                        {% static 'images/not-liked.webp' %}
-                                        {% endif %}" alt="likes"></a>
             </div>
         </div>
+
+        {% if post.user == request.user %}
+            <a href="{% url 'post-edit' post.id %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
+        {% endif %}
+
     </div>
 
-    {% if post.user == request.user %}
-        <a href="{% url 'post-edit' post.id %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
-    {% endif %}
+    <div class="comment">
+
+        <div class="comment-info">Comments ({{post.canvascomment_set.count}})</div>
+
+        <div class="form-div">
+            <form method="POST">
+
+                {% csrf_token %}
+                {{ form.comment }}
+
+                <div class="form_button">
+                    <button class="edit_button" type="submit">Save</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
 
 </div>
 {% endblock %}
