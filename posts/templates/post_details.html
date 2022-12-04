@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load templatetags %}
 
 {% block headers %}
 <link rel="stylesheet" href="{% static 'css/canvas_post_details_style.css' %}">
@@ -25,8 +26,13 @@
                 </div>
             </a>
             <div class="likes-box">
-                <p class="text">0</p>
-                <img class="likes" src="{% static 'images/not-liked.webp' %}" alt="likes">
+                <p class="text">{{ post.canvaslike_set.count }}</p>
+                <a href="{% url 'post-like' post.id %}">
+                <img class="likes" src="{% if post|liked_by:request.user %}
+                                        {% static 'images/liked.webp' %}
+                                        {% else %}
+                                        {% static 'images/not-liked.webp' %}
+                                        {% endif %}" alt="likes"></a>
             </div>
         </div>
     </div>
