@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headers %} 
+<link rel="stylesheet" href="{% static 'css/form_style.css' %}"> 
+{% endblock headers %}
+
+{% block content %}
+<div class="auth">
+
+    <div class="form_div">
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="form_option">
+            <p class="form_p">Comment:</p>
+            <p>{% csrf_token %}{{form.comment}}</p>
+        </div>
+
+        <div class="form_button">
+            <button class="edit_button" type="submit">Save</button>
+        </div>
+
+    </form>
+    </div>
+
+</div>
+
+{% endblock %}
