@@ -62,6 +62,37 @@ def post_delete(request, pk):
 
 
 @login_required(login_url='login')
+def comment_delete(request, pk):
+    cur_comment = CanvasComment.objects.get(id=pk)
+    if cur_comment.user != request.user and not request.user.is_superuser:
+        return redirect('home')
+    else:
+        cur_comment.delete()
+        return redirect(request.META['HTTP_REFERER'])
+
+
+@login_required(login_url='login')
+def comment_edit(request, pk):
+    cur_comment = CanvasComment.objects.get(id=pk)
+    post_id = cur_comment.to_post.id
+
+    if cur_comment.user != request.user and not request.user.is_staff and not request.user.is_superuser:
+        return redirect('home')
+
+    if request.method == 'GET':
+        form = CanvasCommentForm(instance=cur_comment, initial=cur_comment.__dict__)
+    else:
+        form = CanvasCommentForm(request.POST or None, instance=cur_comment)
+        if form.is_valid():
+            form.save()
+            return redirect('post-details', post_id)
+
+    context = {"form": form}
+
+    return render(request, 'comment_edit.html', context=context)
+
+
+@login_required(login_url='login')
 def post_like(request, pk):
     cur_post = CanvasPost.objects.get(id=pk)
     liked_object = CanvasLike.objects.filter(user=request.user, to_post=cur_post).first()
