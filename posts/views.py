@@ -34,7 +34,7 @@ class PostDetails(View):
 @login_required(login_url='login')
 def post_edit(request, pk):
     cur_post = CanvasPost.objects.get(id=pk)
-    if cur_post.user != request.user:
+    if cur_post.user != request.user and not request.user.is_staff and not request.user.is_superuser:
         return redirect('home')
 
     if request.method == 'GET':
@@ -54,7 +54,7 @@ def post_edit(request, pk):
 @login_required(login_url='login')
 def post_delete(request, pk):
     cur_post = CanvasPost.objects.get(id=pk)
-    if cur_post.user != request.user:
+    if cur_post.user != request.user and not request.user.is_superuser:
         return redirect('home')
     else:
         cur_post.delete()

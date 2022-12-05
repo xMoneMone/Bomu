@@ -36,7 +36,7 @@
 
     <div class="profile_buttons">
         <div><a class="button" href="{% url 'logout' %}">Log out</a></div>
-        <div><a class="button" id="confirm-button" href="{% url 'delete profile' %}" onclick="return confirm('Are you sure?')">Delete</a></div>
+        <div><a class="button" id="confirm-button" href="{% url 'delete profile' cur_user %}" onclick="return confirm('Are you sure?')">Delete</a></div>
     </div>
 
     <div class="error_message">

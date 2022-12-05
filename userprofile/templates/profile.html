@@ -28,8 +28,8 @@
 
                     <div class="user-name2">(@{{ cur_profile }})</div>
 
-                    {% if cur_profile == user %}
-                    <a href="{% url 'edit profile' %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
+                    {% if cur_profile == user or request.user.is_staff or request.user.is_superuser %}
+                    <a href="{% url 'edit profile' cur_profile %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
                     {% endif %}
                 </div>
 
