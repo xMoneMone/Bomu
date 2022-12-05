@@ -98,19 +98,32 @@
     <div class="comments">
 
         <div class="comment">
+
             {% for comment in comments %}
-                <a class="text" href="{% url 'show profile' comment.user %}">
-                    <div class="artist">
-                        <img class="drawing-pfp" src="{% if comment.user.userprofile.profile_pic %}
-                        {{ comment.user.userprofile.profile_pic.url }}
-                        {% else %}
-                        {% static 'images/bomu-no-pfp-2.webp' %}
-                        {% endif %}" alt="pfp">
-                        <div class="user-name3">{{comment.user.userprofile.nickname}}</div>
+                <div class="info-top">
+                    <a class="text" href="{% url 'show profile' comment.user %}">
+                        <div class="artist">
+                            <img class="drawing-pfp" src="{% if comment.user.userprofile.profile_pic %}
+                            {{ comment.user.userprofile.profile_pic.url }}
+                            {% else %}
+                            {% static 'images/bomu-no-pfp-2.webp' %}
+                            {% endif %}" alt="pfp">
+                            <div class="user-name3">{{comment.user.userprofile.nickname}}</div>
+                        </div>
+                    </a>
+
+                        <div class="comment-buttons">
+                            {% if comment.user == request.user or request.user.is_staff or request.user.is_superuser %}
+                                <a href="{% url 'comment-edit' comment.id %}"><img class="button-comment" src="{% static 'images/edit.webp' %}" alt="edit comment"></a>
+                            {% endif %}
+                            {% if comment.user == request.user or request.user.is_superuser %}
+                                <a href="{% url 'comment-delete' comment.id %}"><img class="button-comment" src="{% static 'images/delete.webp' %}" alt="delete comment"></a>
+                            {% endif %}
+                        </div>
                     </div>
-                </a>
                 <div class="comment-text">{{comment.comment}}</div>
             {% endfor %}
+
         </div>
 
     </div>
