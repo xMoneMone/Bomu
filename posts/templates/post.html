@@ -21,7 +21,13 @@
             <p class="text">{{ post.canvaslike_set.count }}</p>
             <a href="{% url 'post-like' post.id %}">
                 {% if request.user.is_authenticated %}
-                <img class="likes" src="{% if post|liked_by:request.user %}
+                <img 
+                {% if post.canvassuperlike_set.count == 0 %}
+                    class="likes"
+                {% else %}
+                    class="superlikes"
+                {% endif %}
+                 src="{% if post|liked_by:request.user %}
                                         {% static 'images/liked.webp' %}
                                         {% else %}
                                         {% static 'images/not-liked.webp' %}

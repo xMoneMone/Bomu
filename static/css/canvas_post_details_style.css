@@ -181,6 +181,7 @@ textarea:focus {
 .settings {
     height: 80%;
     background-color: transparent;
+    margin-left: 0.5vw;
 }
 
 .settings-div {
@@ -195,4 +196,10 @@ textarea:focus {
 
 .settings-div *{
     background-color: transparent;
+}
+
+.superlikes {
+    height: 3vh;
+    margin-left: 0.6vh;
+    filter: hue-rotate(-120deg);
 }

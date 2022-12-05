@@ -14,6 +14,11 @@ class CanvasLike(models.Model):
     to_post = models.ForeignKey(CanvasPost, on_delete=models.CASCADE)
 
 
+class CanvasSuperlike(models.Model):
+    user = models.ManyToManyField(User)
+    to_post = models.ForeignKey(CanvasPost, on_delete=models.CASCADE)
+
+
 class CanvasComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     to_post = models.ForeignKey(CanvasPost, on_delete=models.CASCADE)

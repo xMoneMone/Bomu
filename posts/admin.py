@@ -1,5 +1,5 @@
 from django.contrib import admin
-from posts.models import CanvasComment, CanvasPost, CanvasLike
+from posts.models import CanvasComment, CanvasPost, CanvasLike, CanvasSuperlike
 
 
 class CanvasCommentAdmin(admin.ModelAdmin):
@@ -13,3 +13,4 @@ class CanvasPostAdmin(admin.ModelAdmin):
 admin.site.register(CanvasComment, CanvasCommentAdmin)
 admin.site.register(CanvasPost, CanvasPostAdmin)
 admin.site.register(CanvasLike)
+admin.site.register(CanvasSuperlike)
