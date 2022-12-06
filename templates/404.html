@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headers %}
+<link rel="stylesheet" href="{% static 'css/404_style.css' %}">
+{% endblock headers %}
+
+{% block content %}
+    <div class="pic"><img src="{% static 'images/404.webp' %}" alt="404 image"></div>
+{% endblock %}
