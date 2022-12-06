@@ -48,6 +48,14 @@
                 {% include 'posts/templates/post.html' %}
             {% endfor %}
         </div>
+
+        {% if not posts %}
+            <div class="no-posts">
+                <p>No posts</p>
+                <img class="no-posts-pic" src="{% static 'images/no-posts.webp' %}" alt="no-posts">
+            </div>
+        {% endif %}
+
     </div>
 
 {% endblock %}
