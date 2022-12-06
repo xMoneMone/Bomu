@@ -108,7 +108,11 @@
                             {% else %}
                             {% static 'images/bomu-no-pfp-2.webp' %}
                             {% endif %}" alt="pfp">
-                            <div class="user-name3">{{comment.user.userprofile.nickname}}</div>
+                            <div class="user-name3">{% if comment.user.userprofile.nickname %}
+                                                    {{comment.user.userprofile.nickname}}
+                                                    {% else %}
+                                                    {{comment.user}}
+                                                    {% endif %}</div>
                         </div>
                     </a>
 
@@ -117,7 +121,7 @@
                                 <a href="{% url 'comment-edit' comment.id %}"><img class="button-comment" src="{% static 'images/edit.webp' %}" alt="edit comment"></a>
                             {% endif %}
                             {% if comment.user == request.user or request.user.is_superuser %}
-                                <a href="{% url 'comment-delete' comment.id %}"><img class="button-comment" src="{% static 'images/delete.webp' %}" alt="delete comment"></a>
+                                <a href="{% url 'comment-delete' comment.id %}" onclick="return confirm('Are you sure?')"><img class="button-comment" src="{% static 'images/delete.webp' %}" alt="delete comment"></a>
                             {% endif %}
                         </div>
                     </div>
