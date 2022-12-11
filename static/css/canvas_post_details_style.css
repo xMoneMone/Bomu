@@ -230,3 +230,91 @@ textarea:focus {
 .comment:hover .comment-buttons {
     opacity: 100%;
 }
+
+
+@media (pointer:none), (pointer:coarse) {
+    .whole-post {
+        border: 0.2em solid #d9b8c2;
+        border-radius: 0.8em; 
+        width: 80vw;
+        min-height: 60vh;
+        box-shadow: 6px 7px 7px 4px  #e8b9c84c;
+    }
+    
+    .drawing {
+        width: 60vw;
+        border-radius: 0.6em;
+        border: 0.3em solid #9c6f7d;
+    }
+    
+    .post-info {    
+        font-size: 260%;
+    }
+
+    .drawing-pfp {
+        width: 4.8vh;
+        height: 4.8vh;
+    }
+    
+    .center-post {
+        width: 115vw;
+    }
+    
+    .bio {
+        font-size: 2em;
+    }
+    
+    .comment-form {
+        width: 115vw;
+    }
+    
+    .comment-info {
+        width: 72vw;
+        font-size: 2em;
+    }
+    
+    textarea {
+        border: 0.2em solid #ffffff;
+        height: 12em;
+        width: 72vw;
+    }
+    
+    .form-button {
+        width: 70vw;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .edit-button {
+        font-size: 2em;
+        margin-top: 1em;
+        border-radius: 3em;
+    }
+
+    .comments {
+        width: 115vw;
+    }
+    
+    .comment {
+        width: 70vw;
+    }
+    
+    .comment-text {
+        font-size: 2em;
+    }
+    
+    .settings {
+        height: 3.8vh;
+        background-color: transparent;
+        margin-left: 0.5vw;
+    }
+    
+    .settings-div {
+        width: 60vw;
+    }
+    
+    .info-top {
+        font-size: 2.4em;
+    }
+
+}
