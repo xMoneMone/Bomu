@@ -1,3 +1,8 @@
 from django.test import TestCase
 
-# Create your tests here.
+
+class CanvasTestCase(TestCase):
+    def test_canvas(self):
+        response = self.client.get('canvas')
+        self.assertEqual(response, 200)
+

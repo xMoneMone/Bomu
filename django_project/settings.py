@@ -86,6 +86,9 @@ DATABASES = {
         'PASSWORD': 'yatNIj-3rMYBz_chXrykS5XvZZRVkJoK',
         'HOST': 'surus.db.elephantsql.com',
         'PORT': '5432',
+        'TEST': {
+            'NAME': 'bomu_test'
+        }
         # 'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'petstagram-database',
         # 'USER': 'postgres-user',
