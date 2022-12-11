@@ -55,3 +55,25 @@
     height: 3.6vh;
     margin-right: 0.6vw;
 }
+
+@media (pointer:none), (pointer:coarse) {
+    .all-posts {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .center-posts {
+        width: 115vw;
+    }
+
+    .center-buttons {
+        width: 115vw;
+    }
+
+    .sorting-buttons {
+        width: 60%;
+    }
+
+    .sorting {
+        font-size: 300%;
+    }
+}
