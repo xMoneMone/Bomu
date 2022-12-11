@@ -108,3 +108,33 @@ header a {
     color: white;
     font-family: Sono;
 }
+
+@media (pointer:none), (pointer:coarse) {
+    header a {
+        font-size: 240%;
+    }
+
+    .navbar {
+        width: 115vw;
+        height: 10vh;
+    }
+
+    .name {
+        font-size: 8em;
+    }
+
+    .logo {
+        height: 90%;
+    }
+
+    .pfp {
+        height: 7vh;
+        width: 7vh;
+        margin: 0.5em;
+    }
+
+    .navbar-button {
+        font-size: 240%;
+        margin: 0;
+    }
+}
