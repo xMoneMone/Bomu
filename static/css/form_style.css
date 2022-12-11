@@ -125,7 +125,9 @@ textarea:focus {
 }
 
 .image_form {
-    width: 30vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .image_form > p > .checkbox {
@@ -224,6 +226,27 @@ textarea:focus {
     border: 0.10em solid #d2879d;
     color: #d2879d;
 }
+
+.profile-picture-form {
+    display: none; 
+}
+
+#profile-picture-image {
+    width: 100%;
+    aspect-ratio: 1;
+    cursor: pointer;
+
+}
+
+.style-profile-pic {
+    width: 80%;
+    aspect-ratio: 1;
+    border-radius: 100em;
+    border: 0.10em solid #cd9baa;
+    overflow: hidden;
+    margin: 0;
+}
+
 
 @media (pointer:none), (pointer:coarse) {
     .auth > img {
