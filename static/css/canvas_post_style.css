@@ -78,3 +78,26 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+@media (pointer:none), (pointer:coarse) {  
+    .whole-post {
+        border: 0.2em solid #d9b8c2;
+        border-radius: 0.8em;
+        box-shadow: 6px 7px 7px 4px  #e8b9c84c;
+    }
+    
+    .drawing {
+        width: 24em;
+        border-radius: 0.8em;
+    }
+    
+    .drawing-border {
+        width: 24.4em;
+        height: 24.4em;
+        border-radius: 1em;
+    }
+    
+    .text {
+        font-size: 2.4em;
+    }
+}
