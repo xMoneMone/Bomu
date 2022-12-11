@@ -142,3 +142,40 @@ a {
     color: white;
     text-decoration: none;
 }
+
+@media (pointer:none), (pointer:coarse) {   
+    .colors > button {
+        border: 0.2em solid #673e4a;
+    }
+    
+    .colors > button:hover {
+        border: 0.2em solid white;
+    }
+    
+    #post-canvas {
+        font-size: 2em;
+    }
+    
+    .toggle-and-post {
+        width: 480px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    
+    .whole-canvas > *{
+        margin: 1vh;
+    }
+    
+    .whole-canvas {
+        width: 115vw;
+    }
+    
+    label {
+        font-size: 2em;
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(2.6);
+    }
+}
