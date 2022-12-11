@@ -121,6 +121,7 @@ header a {
 
     .name {
         font-size: 8em;
+        background-color: transparent;
     }
 
     .logo {
