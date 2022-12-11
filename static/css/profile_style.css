@@ -89,6 +89,7 @@
     .profile_pfp {
         width: 18vh;
         height: 18vh;
+        margin-right: 3vh;
         border: 0.2em solid #673e4a;
     }
     
@@ -98,6 +99,22 @@
 
     .bio {
         font-size: 200%;
-        width: 35vh;
+        width: 30vh;
+    }
+
+    .user-name {
+        color: #b38f9a;
+        max-width: 10ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        white-space: nowrap;
+    }
+    
+    .user-name2 {
+        color: #b38f9a;
+        max-width: 8ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
