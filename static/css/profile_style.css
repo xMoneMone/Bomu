@@ -84,3 +84,20 @@
 .no-posts-pic {
     height: 20vh;
 }
+
+@media (pointer:none), (pointer:coarse) {
+    .profile_pfp {
+        width: 18vh;
+        height: 18vh;
+        border: 0.2em solid #673e4a;
+    }
+    
+    .whole_profile {
+        width: 115vw;
+    }
+
+    .bio {
+        font-size: 200%;
+        width: 35vh;
+    }
+}
