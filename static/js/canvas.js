@@ -23,6 +23,8 @@ const color12 = document.getElementById("color12");
 const colours = ["#ffffff", "#a0e0d2", "#99ccd1", "#9aacc4", "#8e94b4", "#878bbb",
                  "#71639c", "#e382af", "#fb9faa", "#ffc2ad", "#e4adbe", "#673e4a"]
 
+const colourElemets = [color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11, color12]
+
 const PIXEL_CANVAS_SIZE = 32;
 const pixelLength = canvas.width / PIXEL_CANVAS_SIZE;
 
