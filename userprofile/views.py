@@ -12,8 +12,6 @@ from django.views import View
 
 class ShowProfile(View):
     def get(self, request, uname):
-        posts = []
-
         if User.objects.filter(username=uname).exists():
             cur_profile = User.objects.get(username=uname)
             posts = CanvasPost.objects.filter(user=cur_profile).order_by('-id')
