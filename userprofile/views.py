@@ -71,6 +71,8 @@ class UserLogout(View):
 
 @login_required(login_url='login')
 def userdelete(request, uname):
+    if not User.objects.filter(username=uname).exists():
+        return render(request, template_name="404.html")
     user = User.objects.get(username=uname)
     if user != request.user and not request.user.is_superuser:
         return redirect('home')
