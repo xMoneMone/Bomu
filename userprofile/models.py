@@ -13,4 +13,4 @@ class UserProfile(models.Model):
     def __str__(self):
         if self.nickname:
             return self.nickname
-        return self.user
+        return str(self.user)
