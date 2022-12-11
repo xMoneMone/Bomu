@@ -88,54 +88,6 @@ input[type="checkbox"] {
     transform: scale(1.2);
 }
 
-#color1 {
-    background-color: #ffffff;
-}
-
-#color2 {
-    background-color: #a0e0d2;
-}
-
-#color3 {
-    background-color: #99ccd1;
-}
-
-#color4 {
-    background-color: #9aacc4;
-}
-
-#color5 {
-    background-color: #8e94b4;
-}
-
-#color6 {
-    background-color: #878bbb;
-}
-
-#color7 {
-    background-color: #71639c;
-}
-
-#color8 {
-    background-color: #e382af;
-}
-
-#color9 {
-    background-color: #fb9faa;
-}
-
-#color10 {
-    background-color: #ffc2ad;
-}
-
-#color11 {
-    background-color: #e4adbe;
-}
-
-#color12 {
-    background-color: #673e4a;
-}
-
 a {
     font-family: "Sono", sans-serif;
     font-size: 120%;

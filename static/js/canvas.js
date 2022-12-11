@@ -20,6 +20,9 @@ const color10 = document.getElementById("color10");
 const color11 = document.getElementById("color11");
 const color12 = document.getElementById("color12");
 
+const colours = ["#ffffff", "#a0e0d2", "#99ccd1", "#9aacc4", "#8e94b4", "#878bbb",
+                 "#71639c", "#e382af", "#fb9faa", "#ffc2ad", "#e4adbe", "#673e4a"]
+
 const PIXEL_CANVAS_SIZE = 32;
 const pixelLength = canvas.width / PIXEL_CANVAS_SIZE;
 
@@ -82,56 +85,69 @@ function changeMousedownFlag(e) {
     mouseFlag = true;
 }
 
+color1.style.backgroundColor = colours[0]
+color2.style.backgroundColor = colours[1]
+color3.style.backgroundColor = colours[2]
+color4.style.backgroundColor = colours[3]
+color5.style.backgroundColor = colours[4]
+color6.style.backgroundColor = colours[5]
+color7.style.backgroundColor = colours[6]
+color8.style.backgroundColor = colours[7]
+color9.style.backgroundColor = colours[8]
+color10.style.backgroundColor = colours[9]
+color11.style.backgroundColor = colours[10]
+color12.style.backgroundColor = colours[11]
+
 function changeMouseupFlag(e) {
     mouseFlag = false;
 }
 
 function changeColor1() {
-    color = "#ffffff"
+    color = colours[0]
 }
 
 function changeColor2() {
-    color = "#a0e0d2"
+    color = colours[1]
 }
 
 function changeColor3() {
-    color = "#99ccd1"
+    color = colours[2]
 }
 
 function changeColor4() {
-    color = "#9aacc4"
+    color = colours[3]
 }
 
 function changeColor5() {
-    color = "#8e94b4"
+    color = colours[4]
 }
 
 function changeColor6() {
-    color = "#878bbb"
+    color = colours[5]
 }
 
 function changeColor7() {
-    color = "#71639c"
+    color = colours[6]
 }
 
 function changeColor8() {
-    color = "#e382af"
+    color = colours[7]
 }
 
 function changeColor9() {
-    color = "#fb9faa"
+    color = colours[8]
 }
 
 function changeColor10() {
-    color = "#ffc2ad"
+    color = colours[9]
 }
 
 function changeColor11() {
-    color = "#e4adbe"
+    color = colours[10]
 }
 
 function changeColor12() {
-    color = "#673e4a"
+    color = colours[11]
 }
 
 canvas.addEventListener("pointermove", handleCanvasMousemove);
