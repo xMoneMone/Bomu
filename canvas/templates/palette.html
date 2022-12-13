@@ -4,7 +4,7 @@
     <div class="title">
         {{palette.title}}
         <div class="palette-buttons">
-            <a href="#"><img class="button-palette" src="{% static 'images/edit.webp' %}" alt="edit palette"></a>
+            <a href="{% url 'edit palette' palette.id %}"><img class="button-palette" src="{% static 'images/edit.webp' %}" alt="edit palette"></a>
             <a href="#" onclick="return confirm('Are you sure?')"><img class="button-palette" src="{% static 'images/delete.webp' %}" alt="delete palette"></a>
         </div>
     </div>

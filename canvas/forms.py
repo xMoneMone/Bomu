@@ -6,4 +6,3 @@ class PaletteForm(forms.ModelForm):
     class Meta:
         model = Palette
         fields = '__all__'
-        

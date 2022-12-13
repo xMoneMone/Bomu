@@ -10,7 +10,7 @@
 {% block content %}
     <div class="center-palettes">
         <div class="column">
-            <a class="navbar-button" id="add-palette" href="#">+Add Palette</a>
+            <a class="navbar-button" id="add-palette" href="{% url 'add palette' %}">+Add Palette</a>
 
             <div class="all-palettes">
                 {% for palette in palettes %}

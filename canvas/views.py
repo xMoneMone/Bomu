@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from posts.forms import CanvasPostForm
+from canvas.forms import PaletteForm
 from canvas.models import Palette
 
 
@@ -33,3 +34,36 @@ def palettes(request):
         "palettes": all_palettes
     }
     return render(request, template_name="palettes.html", context=context)
+
+
+def palette_add(request):
+    if request.user.is_staff and not request.user.is_superuser:
+        return redirect('home')
+
+    form = PaletteForm()
+    if request.method == 'POST':
+        form = PaletteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('palettes')
+
+    context = {"form": form}
+    return render(request, template_name="add-palette.html", context=context)
+
+
+def palette_edit(request, pk):
+    if request.user.is_staff and not request.user.is_superuser:
+        return redirect('home')
+
+    cur_palette = Palette.objects.get(id=pk)
+
+    if request.method == 'GET':
+        form = PaletteForm(instance=cur_palette, initial=cur_palette.__dict__)
+    else:
+        form = PaletteForm(request.POST or None, instance=cur_palette)
+        if form.is_valid():
+            form.save()
+            return redirect('palettes')
+
+    context = {"form": form}
+    return render(request, 'add-palette.html', context=context)
