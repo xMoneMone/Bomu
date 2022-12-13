@@ -26,7 +26,7 @@ def post_canvas(request):
 
 
 def palettes(request):
-    if request.user.is_staff and not request.user.is_superuser:
+    if not request.user.is_staff and not request.user.is_superuser:
         return redirect('home')
 
     all_palettes = Palette.objects.all().order_by('-id')
@@ -37,7 +37,7 @@ def palettes(request):
 
 
 def palette_add(request):
-    if request.user.is_staff and not request.user.is_superuser:
+    if not request.user.is_staff and not request.user.is_superuser:
         return redirect('home')
 
     form = PaletteForm()
@@ -52,7 +52,7 @@ def palette_add(request):
 
 
 def palette_edit(request, pk):
-    if request.user.is_staff and not request.user.is_superuser:
+    if not request.user.is_staff and not request.user.is_superuser:
         return redirect('home')
 
     cur_palette = Palette.objects.get(id=pk)
@@ -67,3 +67,13 @@ def palette_edit(request, pk):
 
     context = {"form": form}
     return render(request, 'add-palette.html', context=context)
+
+
+def palette_delete(request, pk):
+    if not request.user.is_superuser:
+        return redirect('home')
+
+    cur_palette = Palette.objects.get(id=pk)
+    cur_palette.delete()
+
+    return redirect('palettes')
