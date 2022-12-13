@@ -1,5 +1,5 @@
 from django.contrib import admin
-from posts.models import CanvasComment, CanvasPost, CanvasLike, CanvasSuperlike
+from posts.models import CanvasComment, CanvasPost, CanvasLike
 
 
 def shorten(string, val: int):
@@ -46,16 +46,6 @@ class CanvasPostAdmin(admin.ModelAdmin):
 
 @admin.register(CanvasLike)
 class CanvasLikeAdmin(admin.ModelAdmin):
-    list_display = ("id", "post")
-
-    def post(self, obj):
-        post = obj.to_post
-        artist = str(post.user)
-        return f"post #{post.id} by {shorten(artist, 10)}"
-
-
-@admin.register(CanvasSuperlike)
-class CanvasSuperlikeAdmin(admin.ModelAdmin):
     list_display = ("id", "post")
 
     def post(self, obj):

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from posts.models import CanvasPost, CanvasLike, CanvasSuperlike, CanvasComment
+from posts.models import CanvasPost, CanvasLike, CanvasComment
 from posts.forms import CanvasPostForm, CanvasCommentForm
 from django.contrib.auth.decorators import login_required
 from django.views import View
@@ -101,24 +101,6 @@ def post_like(request, pk):
         liked_object.delete()
     else:
         like = CanvasLike(to_post=cur_post)
-        like.save()
-        like.user.add(request.user)
-
-    return redirect(request.META['HTTP_REFERER'])
-
-
-@login_required(login_url='login')
-def post_superlike(request, pk):
-    cur_post = CanvasPost.objects.get(id=pk)
-    liked_object = CanvasSuperlike.objects.filter(user=request.user, to_post=cur_post).first()
-
-    if not request.user.is_staff and not request.user.is_superuser:
-        return redirect('home')
-
-    if liked_object:
-        liked_object.delete()
-    else:
-        like = CanvasSuperlike(to_post=cur_post)
         like.save()
         like.user.add(request.user)
 

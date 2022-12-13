@@ -12,22 +12,11 @@
 
         <div class="whole-post">
 
-                    {% if post.user == request.user or request.user.is_staff or request.user.is_superuser %}
-            <div class="settings-div">
-                {% if request.user.is_staff or request.user.is_superuser%}
-                    <div class="likes-box">
-                        <p class="text">{{ post.canvassuperlike_set.count }}</p>
-                        <a href="{% url 'post-superlike' post.id %}">
-                        <img class="superlikes" src="{% if post|superliked_by:request.user %}
-                                                {% static 'images/liked.webp' %}
-                                                {% else %}
-                                                {% static 'images/not-liked.webp' %}
-                                                {% endif %}" alt="superlikes"></a>
-                    </div>
-                {% endif %}
-                <a href="{% url 'post-edit' post.id %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
-            </div>
-        {% endif %}
+            {% if post.user == request.user or request.user.is_staff or request.user.is_superuser %}
+                <div class="settings-div">
+                    <a href="{% url 'post-edit' post.id %}"><img class="settings" src="{% static 'images/settings.webp' %}" alt="Settings"></a>
+                </div>
+            {% endif %}
 
             <img class="drawing" src='{{post.drawing.url}}' alt="drawing">
 
@@ -44,26 +33,17 @@
                 </a>
                 <div class="likes-box">
                     <p class="text">{{ post.canvaslike_set.count }}</p>
-                    <a {% if post.canvassuperlike_set.count != 0 %}title="superliked by admin"{% endif %} href="{% url 'post-like' post.id %}">
+                    <a href="{% url 'post-like' post.id %}">
                     {% if request.user.is_authenticated %}
                     <img 
-                    {% if post.canvassuperlike_set.count == 0 %}
-                        class="likes"
-                    {% else %}
-                        class="superlikes"
-                    {% endif %} 
+                    class="likes" 
                     src="{% if post|liked_by:request.user %}
                                             {% static 'images/liked.webp' %}
                                             {% else %}
                                             {% static 'images/not-liked.webp' %}
                                             {% endif %}" alt="likes">
                     {% else %}
-                    <img 
-                    {% if post.canvassuperlike_set.count == 0 %}
-                        class="likes"
-                    {% else %}
-                        class="superlikes"
-                    {% endif %} src="{% static 'images/not-liked.webp' %}" alt="likes">
+                    <img class="likes"  src="{% static 'images/not-liked.webp' %}" alt="likes">
                     {% endif %}</a>
                 </div>
             </div>

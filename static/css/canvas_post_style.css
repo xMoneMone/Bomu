@@ -67,12 +67,6 @@
     margin-left: 0.6vh;
 }
 
-.superlikes {
-    height: 2.6vh;
-    margin-left: 0.6vh;
-    filter: hue-rotate(-120deg);
-}
-
 .user-name3 {
     width: 7ch;
     overflow: hidden;
