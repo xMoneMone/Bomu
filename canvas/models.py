@@ -16,3 +16,7 @@ class Palette(models.Model):
     c10 = models.CharField(max_length=7, validators=(hex_code_validator,))
     c11 = models.CharField(max_length=7, validators=(hex_code_validator,))
     c12 = models.CharField(max_length=7, validators=(hex_code_validator,))
+
+
+class ActivePalette(models.Model):
+    palette = models.IntegerField()
