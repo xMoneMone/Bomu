@@ -95,6 +95,21 @@ a {
     text-decoration: none;
 }
 
+.edit {
+    width: 3%;
+    opacity: 0;
+    transition: opacity ease-in-out 0.3s;
+}
+
+.hidden_edit {
+    width: 3%;
+    opacity: 0;
+}
+
+.colors:hover .edit {
+    opacity: 100%;
+}
+
 @media (pointer:none), (pointer:coarse) {   
     .colors > button {
         border: 0.2em solid #673e4a;

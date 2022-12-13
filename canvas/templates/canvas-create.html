@@ -20,6 +20,9 @@
             <div id="guide"></div>
         </div>
         <div class="colors">
+            {% if request.user.is_staff or request.user.is_superuser %}
+                <img class="hidden_edit" src="{% static 'images/edit.webp' %}" alt="edit palette">
+            {% endif %}
             <button id="color1"></button>
             <button id="color2"></button>
             <button id="color3"></button>
@@ -32,6 +35,9 @@
             <button id="color10"></button>
             <button id="color11"></button>
             <button id="color12"></button>
+            {% if request.user.is_staff or request.user.is_superuser %}
+                <a href="#"><img class="edit" src="{% static 'images/edit.webp' %}" alt="edit palette"></a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
