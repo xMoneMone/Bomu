@@ -28,7 +28,7 @@ def palettes(request):
     if request.user.is_staff and not request.user.is_superuser:
         return redirect('home')
 
-    all_palettes = Palette.objects.all()
+    all_palettes = Palette.objects.all().order_by('-id')
     context = {
         "palettes": all_palettes
     }
