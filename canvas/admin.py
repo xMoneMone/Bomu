@@ -1,3 +1,7 @@
 from django.contrib import admin
+from canvas.models import Palette
 
-# Register your models here.
+
+@admin.register(Palette)
+class PaletteAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
