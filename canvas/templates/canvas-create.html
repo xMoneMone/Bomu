@@ -19,7 +19,7 @@
             <canvas width="512" height="512" id="canvas"></canvas>
             <div id="guide"></div>
         </div>
-        <div class="colors">
+        <div class="colors" id="colors" data-palette={{palette}}>
             {% if request.user.is_staff or request.user.is_superuser %}
                 <img class="hidden_edit" src="{% static 'images/edit.webp' %}" alt="edit palette">
             {% endif %}

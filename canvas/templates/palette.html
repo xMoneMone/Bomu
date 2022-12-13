@@ -6,7 +6,7 @@
         <div class="palette-buttons">
             <a href="{% url 'edit palette' palette.id %}"><img class="button-palette" src="{% static 'images/edit.webp' %}" alt="edit palette"></a>
             {% if request.user.is_superuser %}
-                <a href="{% url 'delete palette' palette.id %}" onclick="return confirm('Are you sure?')"><img class="button-palette" src="{% static 'images/liked.webp' %}" alt="set palette"></a>
+                <a href="{% url 'set palette' palette.id %}" onclick="return confirm('Are you sure?')"><img class="button-palette" src="{% static 'images/liked.webp' %}" alt="set palette"></a>
                 <a href="{% url 'delete palette' palette.id %}" onclick="return confirm('Are you sure?')"><img class="button-palette" src="{% static 'images/delete.webp' %}" alt="delete palette"></a>
             {% endif %}
         </div>

@@ -2,12 +2,19 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from posts.forms import CanvasPostForm
 from canvas.forms import PaletteForm
-from canvas.models import Palette
+from canvas.models import Palette, ActivePalette
 
 
 @login_required(login_url='login')
 def canvas(request):
-    return render(request, template_name="canvas-create.html")
+    active_palette_id = ActivePalette.objects.get(id=1).palette
+    active_palette = Palette.objects.get(id=active_palette_id)
+    palette = str([active_palette.c1, active_palette.c2, active_palette.c3,
+                   active_palette.c4, active_palette.c5, active_palette.c6,
+                   active_palette.c7, active_palette.c8, active_palette.c9,
+                   active_palette.c10, active_palette.c11, active_palette.c12]).replace(" ", '@').replace("'", '"')
+    context = {"palette": palette}
+    return render(request, template_name="canvas-create.html", context=context)
 
 
 @login_required(login_url='login')
@@ -77,3 +84,14 @@ def palette_delete(request, pk):
     cur_palette.delete()
 
     return redirect('palettes')
+
+
+def palette_set(request, pk):
+    if not request.user.is_superuser:
+        return redirect('home')
+
+    active_palette = ActivePalette.objects.get(id=1)
+    active_palette.palette = pk
+    active_palette.save()
+
+    return redirect('canvas')

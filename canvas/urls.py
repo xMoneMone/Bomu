@@ -7,5 +7,6 @@ urlpatterns = [
     path('palettes', views.palettes, name="palettes"),
     path('palettes/add', views.palette_add, name="add palette"),
     path('palette/edit/<int:pk>', views.palette_edit, name="edit palette"),
-    path('palette/delete/<int:pk>', views.palette_delete, name="delete palette")
+    path('palette/delete/<int:pk>', views.palette_delete, name="delete palette"),
+    path('palette/set/<int:pk>', views.palette_set, name="set palette")
 ]
