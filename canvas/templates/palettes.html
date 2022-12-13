@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headers %} 
+<link rel="stylesheet" href="{% static 'css/palettes_style.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/palette_style.css' %}"> 
+{% endblock headers %}
+
+{% block content %}
+    <div class="center-palettes">
+        <div class="column">
+            <a class="navbar-button" id="add-palette" href="#">+Add Palette</a>
+
+            <div class="all-palettes">
+                {% for palette in palettes %}
+                    {% include 'canvas/templates/palette.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

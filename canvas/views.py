@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from posts.forms import CanvasPostForm
-from django.contrib.auth.models import User
+from canvas.models import Palette
 
 
 @login_required(login_url='login')
@@ -22,3 +22,14 @@ def post_canvas(request):
 
     context = {"form": form}
     return render(request, template_name="post-canvas.html", context=context)
+
+
+def palettes(request):
+    if request.user.is_staff and not request.user.is_superuser:
+        return redirect('home')
+
+    all_palettes = Palette.objects.all()
+    context = {
+        "palettes": all_palettes
+    }
+    return render(request, template_name="palettes.html", context=context)

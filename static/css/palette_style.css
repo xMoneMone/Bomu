@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
+
+.palette {
+    width: 26vw;
+    padding: 1em;
+    border-radius: 0.8em;
+    background-color: white;
+    border: 0.10em solid #d9b8c2;
+}
+
+.palette * {
+    background-color: white;
+}
+
+.title {
+    font-family: Sono, sans-serif;
+    color: #673e4a;
+    font-size: 1.4em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-palette {
+    height: 60%;
+}
+
+.palette-buttons {
+    opacity: 0;
+    transition: opacity ease-in-out 0.3s;
+}
+
+.palette:hover .palette-buttons {
+    opacity: 100%;
+}
+
+.colors {
+    display: flex;
+    justify-content: space-between;
+}
+
+.colors > button {
+    width: 4vh;
+    height: 4vh;
+    border-radius: 0.3em;
+    border: 0.16em solid #673e4a;
+    transition: border 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+    margin-top: 0.5em;
+}

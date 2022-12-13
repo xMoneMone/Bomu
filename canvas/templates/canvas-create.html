@@ -36,7 +36,7 @@
             <button id="color11"></button>
             <button id="color12"></button>
             {% if request.user.is_staff or request.user.is_superuser %}
-                <a href="#"><img class="edit" src="{% static 'images/edit.webp' %}" alt="edit palette"></a>
+                <a href="{% url 'palettes' %}"><img class="edit" src="{% static 'images/edit.webp' %}" alt="edit palette"></a>
             {% endif %}
         </div>
     </div>

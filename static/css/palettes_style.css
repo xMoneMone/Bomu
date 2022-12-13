@@ -1,0 +1,22 @@
+.center-palettes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.all-palettes {
+    padding-top: 2em;
+    border-top: 0.10em solid #d9b8c2;
+}
+
+#add-palette {
+    font-family: Sono, sans-serif;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
