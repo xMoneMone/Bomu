@@ -20,3 +20,23 @@
     display: flex;
     justify-content: center;
 }
+
+@media (pointer:none), (pointer:coarse) {
+    .center-palettes {
+        width: 115vw;
+    }
+
+    .column {
+        background-color: transparent;
+    }
+    
+    .all-palettes {
+        border-top: 0.3em solid #d9b8c2;
+    }
+    
+    #add-palette {
+        font-size: 4em;
+        margin-top: 3vh;
+        margin-bottom: 2vh;
+    }
+}

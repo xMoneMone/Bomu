@@ -2,7 +2,7 @@
 
 
 .palette {
-    width: 26vw;
+    width: 28vw;
     padding: 1em;
     border-radius: 0.8em;
     background-color: white;
@@ -23,7 +23,7 @@
 }
 
 .button-palette {
-    height: 60%;
+    height: 2vh;
 }
 
 .palette-buttons {
@@ -47,4 +47,52 @@
     border: 0.16em solid #673e4a;
     transition: border 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
     margin-top: 0.5em;
+}
+
+@media screen and (max-width: 1200px) {
+    .palette{
+        width: 60vw;
+    }   
+}
+
+@media screen and (max-width: 800px) {
+    .palette{
+        width: 90vw;
+    }   
+}
+
+@media (pointer:none), (pointer:coarse) {
+    .palette {
+        width: 100vw;
+        border-radius: 1.6em;
+        border: 0.3em solid #d9b8c2;
+    }
+    
+    .title {
+        font-size: 3.6em;
+        margin: 1vh;
+    }
+    
+    .button-palette {
+        height: 2vh;
+    }
+    
+    .palette-buttons {
+        opacity: 0;
+        transition: opacity ease-in-out 0.3s;
+    }
+    
+    .palette:hover .palette-buttons {
+        opacity: 100%;
+    }
+    
+    .colors {
+        margin: 1vh;
+    }
+    
+    .colors > button {
+        border-radius: 0.8em;
+        border: 0.3em solid #673e4a;
+        margin: 0.5vw;
+    }
 }
