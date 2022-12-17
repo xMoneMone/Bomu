@@ -93,6 +93,14 @@ p {
     text-align: center;
 }
 
+.form_error {
+    width: 100%;
+    color: #d26989;
+    font-family: Sono, sans-serif;
+    background-color: white;
+    text-align: center;
+}
+
 .error_message:first-of-type {
     display: block;
 }
