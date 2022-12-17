@@ -8,7 +8,10 @@ from canvas.models import Palette, ActivePalette
 @login_required(login_url='login')
 def canvas(request):
     active_palette_id = ActivePalette.objects.get(id=1).palette
-    active_palette = Palette.objects.get(id=active_palette_id)
+    if not Palette.objects.filter(id=active_palette_id):
+        active_palette = Palette.objects.filter().first()
+    else:
+        active_palette = Palette.objects.get(id=active_palette_id)
     palette = str([active_palette.c1, active_palette.c2, active_palette.c3,
                    active_palette.c4, active_palette.c5, active_palette.c6,
                    active_palette.c7, active_palette.c8, active_palette.c9,
