@@ -42,11 +42,12 @@
 
 .colors > button {
     width: 4vh;
-    height: 4vh;
+    aspect-ratio: 1;
     border-radius: 0.3em;
     border: 0.16em solid #673e4a;
     transition: border 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
     margin-top: 0.5em;
+    margin: 0.5%;
 }
 
 @media screen and (max-width: 1400px) {
