@@ -6,13 +6,13 @@ Create and log into your Bomu profile
 Customise your bio, nickname, and profile picture
 ![image2](https://user-images.githubusercontent.com/92688848/219471964-a81aa748-c7ee-47a7-b93a-581dd5ff2996.png)
 
-Create 32-bit pixel art and upload directly
+Create 32-bit pixel art and post directly
 ![image3](https://user-images.githubusercontent.com/92688848/219471984-ebddc942-fb3f-4948-9c05-d3bc4beeec8a.png)
 
 Create and change the canvas palette site-wide [admin-only] 
 ![image4](https://user-images.githubusercontent.com/92688848/219471994-07b1a088-54f7-4b43-ba41-ffe6d4823e66.png)
 
-Sort uploaded art by new or by popular
+Sort posted art by new or by popular
 ![image5](https://user-images.githubusercontent.com/92688848/219472013-3a7d4c01-f6bd-4168-a000-8eebe6650afc.png)
 
 Comment on and like others' creations
